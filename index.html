@@ -5,9 +5,10 @@ if($_POST["submit"]) {
     $subject="Form to email message";
     $sender=$_POST["sender"];
     $senderEmail=$_POST["senderEmail"];
+    $website=$_POST["website"];
     $message=$_POST["message"];
 
-    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$website\n\n$message";
 
     mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
 
@@ -207,9 +208,9 @@ body {font-size:16px;}
  <?=$thankYou ?>
   <form  method="post" action="contact.php">
     <input type="text" name="field1" input name="sender" placeholder="Full Name" />
-    <input type="email" name="senderEmail" name="field2" placeholder="Email" />
-    <input type="url" name="field3" placeholder="Website" />
-    <textarea placeholder="Message" name="submit" onkeyup="adjust_textarea(this)"></textarea>
+    <input type="email" input name="senderEmail" name="field2" placeholder="Email" />
+    <input type="url" input name="website" name="field3" placeholder="Website" />
+    <textarea placeholder="Message" input name="message" onkeyup="adjust_textarea(this)"></textarea>
     <input type="button" value="Send Message" />
   </form>
      
