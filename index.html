@@ -189,12 +189,11 @@ body {font-size:16px;}
     <hr style="width:50px;border:5px solid #ddffff" class="w3-round">
     <p>Do you want me to work on your project? Fill out the form and fill me in with the details. I look forward to speaking to you!</p>
    <div class="form-style-8">
- <?=$thankYou ?>
   <form  method="post" action="contact.php">
-    <input type="text" name="field1" input name="sender" placeholder="Full Name" />
-    <input type="email" input name="senderEmail" name="field2" placeholder="Email" />
-    <input type="url" input name="website" name="field3" placeholder="Website" />
-    <textarea placeholder="Message" input name="message" onkeyup="adjust_textarea(this)"></textarea>
+    <input type="text" name="sender" placeholder="Full Name" />
+    <input type="email" name="senderEmail" placeholder="Email" />
+    <input type="url" name="website" placeholder="Website" />
+    <textarea placeholder="Message" name="message" onkeyup="adjust_textarea(this)"></textarea>
     <input type="button" value="Send Message" />
   </form>
      
