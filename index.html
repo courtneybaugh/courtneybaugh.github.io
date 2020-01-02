@@ -1,3 +1,19 @@
+<?php
+
+if($_POST["submit"]) {
+    $recipient="courtneyibaugh@gmail.com";
+    $subject="Form to email message";
+    $sender=$_POST["sender"];
+    $senderEmail=$_POST["senderEmail"];
+    $message=$_POST["message"];
+
+    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+
+    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
+
+    $thankYou="<p>Thank you! Your message has been sent.</p>";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -182,18 +198,21 @@ body {font-size:16px;}
     </div> -->
 
   <!-- Contact -->
+ 
   <div class="w3-container" id="contact" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-blue-grey"><b>Contact</b></h1>
     <hr style="width:50px;border:5px solid #ddffff" class="w3-round">
     <p>Do you want me to work on your project? Fill out the form and fill me in with the details. I look forward to speaking to you!</p>
    <div class="form-style-8">
-  <form action="mailto:courtneyibaugh@gmail.com">
-    <input type="text" name="field1" placeholder="Full Name" />
-    <input type="email" name="field2" placeholder="Email" />
+ <?=$thankYou ?>
+  <form  method="post" action="contact.php">
+    <input type="text" name="field1" input name="sender" placeholder="Full Name" />
+    <input type="email" name="senderEmail" name="field2" placeholder="Email" />
     <input type="url" name="field3" placeholder="Website" />
-    <textarea placeholder="Message" onkeyup="adjust_textarea(this)"></textarea>
+    <textarea placeholder="Message" name="submit" onkeyup="adjust_textarea(this)"></textarea>
     <input type="button" value="Send Message" />
   </form>
+     
 </div>
   </div>
 
