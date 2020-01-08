@@ -10,44 +10,41 @@ body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
+* {box-sizing: border-box}
+
+/* Container needed to position the overlay. Adjust the width as needed */
 .con {
   position: relative;
   width: 50%;
+  max-width: 300px;
 }
 
+/* Make the image to responsive */
 .image {
-  opacity: 1;
   display: block;
   width: 100%;
   height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
 }
 
-.middle {
-  transition: .5s ease;
-  opacity: 0;
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
   text-align: center;
 }
 
-.con:hover .image {
-  opacity: 0.3;
-}
-
-.con:hover .middle {
+/* When you mouse over the container, fade in the overlay title */
+.con:hover .overlay {
   opacity: 1;
-}
-
-.text {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
 }
 </style>
 <meta property="og:image" content="BIG.png" />
@@ -210,10 +207,10 @@ body {font-size:16px;}
   <!-- Photo grid (modal) -->
   <div class="w3-row-padding" >
     <div class="w3-half con">
-      <a href="https://courtneybaugh.github.io/"><img src="BIG.png" style="width:100%" alt="Portfolio Site"></a>
-        <div class="middle " style="#ddffff">
-       <div class="text">I developed this site using HTML, JS, and CSS.</div>
-  </div>
+      <a href="https://courtneybaugh.github.io/"><img src="BIG.png" style="width:100%" alt="Portfolio Site" class="image"></a>
+        <div class="overlay">
+       I developed this site using HTML, JS, and CSS.</div>
+
    </div>
     </div>
 
