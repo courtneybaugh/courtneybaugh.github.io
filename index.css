@@ -460,9 +460,10 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 /* LOGO */
 
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+     margin: auto 5px;
+    float: left;
+    width: 150px;
+    height: 38px;
   width: 50%;
   height: 50%;
 }
