@@ -460,8 +460,10 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 /* LOGO */
 
 .center {
-  margin:-1000px;
-  float: left;
+/*   margin:-1000px;
+  float: left; */
+  object-position: 50% 50%; /* default value: image is centered*/
+  object-position: 0 0;
   width: 50%;
   height: 50%;
 }
